@@ -1,0 +1,8 @@
+Theos tweaks I've written for iOS.
+
+These are all debug versions and you'll have to compile and install them yourselves.
+
+Step 1: Setup theos
+Step 2: make do
+
+If you'd like to avoid spamming your syslog, disable debug in your Makefile
