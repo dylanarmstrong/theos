@@ -78,7 +78,7 @@
 - (void)tw_evaluateJavascript:(NSString *)command {
   if ([command hasPrefix:@"replaceMessagesFromUserWithMessage"]) {
     // Deleting comment
-    HBLogDebug(@"TKChatViewUIWebView tw_evaluateJavascript: %@", command);
+    //HBLogDebug(@"TKChatViewUIWebView tw_evaluateJavascript: %@", command);
     return;
 
   } else if ([command hasPrefix:@"addComponents"]) {
@@ -96,7 +96,7 @@
 %hook TWChatView
 - (void)replaceMessagesFromUser:(NSString *)userName withText:(NSString *)text {
   // Used when deleting messages from user
-  HBLogDebug(@"TWChatView replaceMessagesFromUser: %@", userName);
+  //HBLogDebug(@"TWChatView replaceMessagesFromUser: %@", userName);
   %orig;
 }
 %end

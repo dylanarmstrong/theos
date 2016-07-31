@@ -1,0 +1,9 @@
+Package: com.bilbo.youtube
+Name: youtube
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Useful patches for Youtube
+Maintainer: baggins
+Author: baggins
+Section: Tweaks
