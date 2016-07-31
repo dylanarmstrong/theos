@@ -3,6 +3,9 @@
  * Version 1.0
  *
  * Disable ads
+ * Enable background audio
+ * Disable watermarks
+ * Disable adult content check
  *
  */
 
@@ -153,12 +156,6 @@
   HBLogDebug(@"YTFeaturedWatermarkView updateWatermarkSizeWithHeight");
   %orig(0);
 }
-%end
-
-%hook YTReachabilityController
-%end
-
-%hook YTUserDefaults
 %end
 
 %hook YTSettings
