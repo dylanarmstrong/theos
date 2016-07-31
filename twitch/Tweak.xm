@@ -1,4 +1,4 @@
-/* 
+/*
  * Twitch -- Theos
  * Version 1.0
  *
@@ -10,9 +10,10 @@
  * Always enable AirPlay
  *
  */
+
 %ctor {
   // Initializing
-  HBLogDebug(@"Initialized Tweak");
+  HBLogDebug(@"Initialized");
 }
 
 %hook CSCore
@@ -93,8 +94,8 @@
 %end
 
 %hook TWChatView
-// Used when deleting messages from user
 - (void)replaceMessagesFromUser:(NSString *)userName withText:(NSString *)text {
+  // Used when deleting messages from user
   HBLogDebug(@"TWChatView replaceMessagesFromUser: %@", userName);
   %orig;
 }
