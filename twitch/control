@@ -1,0 +1,9 @@
+Package: com.bilbo.twitch
+Name: twitch
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Useful patches for Twitch
+Maintainer: baggins
+Author: baggins
+Section: Tweaks
