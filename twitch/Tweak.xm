@@ -75,6 +75,7 @@
 // Used when interacting with comments on chat webView
 // This is a more interesting place to hook in
 %hook TWChatViewUIWebView
+// All javascript is executed on transcript.js in the .app folder
 - (void)tw_evaluateJavascript:(NSString *)command {
   if ([command hasPrefix:@"replaceMessagesFromUserWithMessage"]) {
     // Deleting comment
@@ -206,6 +207,30 @@
   // I have already been confirmed
   HBLogDebug(@"TWAccountManager setAgeConfirmed");
   %orig(true);
+}
+%end
+
+%hook TWTwitchChatAdapter
+- (void)chatChannelUserMessagesClearedForUser:(id)arg1 channel:(id)arg2 clearUser:(id)arg3 {
+  // Clearing messages for a user goes here first
+  HBLogDebug(@"TWTwitchChatAdapter chatChannelUserMessagesClearedForUser");
+  %orig;
+}
+%end
+
+%hook TWChatController
+- (void)chatAdapter:(id)chatAdapter receivedClearMessagesRequestForUser:(NSString *)myUser clearUser:(NSString *)badUser onChannel:(NSString *)channel {
+  // Second
+  HBLogDebug(@"TWChatController receivedClearMessagesRequestForUser");
+  %orig;
+}
+%end
+
+%hook TWChannelChatViewController
+- (void)channelChatRoomController:(id)arg1 clearMessagesFromUser:(NSString *)arg2 {
+  // Third
+  HBLogDebug(@"TWChannelChatViewController channelChatRoomController: %@", arg2);
+  %orig;
 }
 %end
 
